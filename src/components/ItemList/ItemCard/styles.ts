@@ -1,7 +1,7 @@
 import styled from "styled-components";
-import GreenBackground from "../../../../assets/images/itemGreenBackground.png";
-import RedBackground from "../../../../assets/images/itemRedBackground.png";
-import YellowBackground from "../../../../assets/images/itemYellowBackground.png";
+import GreenBackground from "../../../assets/images/itemGreenBackground.png";
+import RedBackground from "../../../assets/images/itemRedBackground.png";
+import YellowBackground from "../../../assets/images/itemYellowBackground.png";
 
 export const ItemBackground = styled.div`
   background-color: white;
