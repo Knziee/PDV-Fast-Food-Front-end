@@ -1,4 +1,4 @@
-import imagemTest from "../../../assets/images/cheddar.png";
+import imagemTest from "../../../assets/images/estacado.png";
 import { KitchenButtons } from "./KitchenButton";
 import { CardContainer, Description, Title } from "./styles";
 

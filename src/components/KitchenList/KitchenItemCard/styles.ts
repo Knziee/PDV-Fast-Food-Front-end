@@ -16,4 +16,5 @@ export const Title = styled.div`
 export const Description = styled.div`
   font-size: 15px;
   font-family: "RobotoRegular";
+  color: "#878787";
 `;

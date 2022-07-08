@@ -3,16 +3,16 @@ import styled from "styled-components";
 export const CozinhaWrapper = styled.div`
   height: 100%;
   max-width: 1440px;
-  border: 1px solid purple;
   display: flex;
+  justify-content: space-evenly;
   margin: auto;
   flex-direction: row;
   padding-top: 70px;
-  background-color: #f2eded;
+  background-color: #ffff;
 `;
 
 export const CozinhaDivider = styled.div`
   height: 600px;
-  width:2px;;
-background-color:black;
+  width: 2px;
+  background-color: black;
 `;

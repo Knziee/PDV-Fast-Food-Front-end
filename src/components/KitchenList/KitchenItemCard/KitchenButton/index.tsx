@@ -14,11 +14,11 @@ export const KitchenButtons: React.FC<KitchenButtonProps> = ({
 }) => {
   return (
     <ButtonsWrapper>
-      <KitchenButtonBackground sucess>
-        <ButtonIconConfirm />
-      </KitchenButtonBackground>
       <KitchenButtonBackground>
         <ButtonIconRemove />
+      </KitchenButtonBackground>{" "}
+      <KitchenButtonBackground sucess>
+        <ButtonIconConfirm />
       </KitchenButtonBackground>
     </ButtonsWrapper>
   );

@@ -8,7 +8,7 @@ export const HeaderBackground = styled.div`
 export const HeaderContainer = styled.div`
   height: 60px;
   max-width: 1440px;
-  border: 1px solid purple;
+
   display: flex;
   align-items: center;
   justify-content: space-between;
