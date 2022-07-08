@@ -137,8 +137,22 @@ export const Pedidos: React.FC = () => {
                 })}
         </ItemContainer>
         <ButtonWrapper>
-          <Button background="red" borderColor="blue" text="cancelar" />
-          <Button background="red" borderColor="blue" text="finalizar pedido" />
+          <Button
+            background="none"
+            borderColor="#9f9f9f"
+            text="Cancelar"
+            width="350px"
+            height="60px"
+            color="#9f9f9f"
+          />
+          <Button
+            background="#9f9f9f"
+            borderColor="#9f9f9f"
+            text="Finalizar pedido"
+            width="350px"
+            height="60px"
+            color="#fff"
+          />
         </ButtonWrapper>
       </PedidosWrapper>
     </div>

@@ -5,8 +5,8 @@ import YellowBackground from "../../../assets/images/itemYellowBackground.png";
 
 export const ItemBackground = styled.div`
   background-color: white;
-  width: 235px;
-  height: 155px;
+  width: 225px;
+  height: 180px;
   border-radius: 20px;
   box-shadow: 0 2px 10px -8px;
   display: flex;
@@ -16,8 +16,8 @@ export const ItemBackground = styled.div`
 `;
 
 export const ItemImgBackground = styled.div`
-  width: 235px;
-  height: 255px;
+  width: 225px;
+  height: 275px;
   background-image: ${(props: any) =>
     props.red
       ? `url(${RedBackground})`
@@ -30,20 +30,20 @@ export const ItemImgBackground = styled.div`
 `;
 
 export const ItemTitle = styled.div`
-  font-size: 20px;
+  font-size: 18px;
   text-align: center;
   margin-bottom: 5px;
   font-family: "RobotoBlack";
 `;
 export const ItemDescription = styled.div`
   font-size: 12px;
-  color: grey;
+  color: #515151;
   text-align: center;
   margin-bottom: 20px;
   font-family: "RobotoRegular";
 `;
 export const ItemPrice = styled.div`
-  font-size: 15px;
+  font-size: 18px;
   text-align: center;
   margin-bottom: -50px;
   padding-bottom: 20px;

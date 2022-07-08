@@ -1,18 +1,20 @@
 import styled from "styled-components";
 
 export const Title = styled.div`
-  font-size: 25px;
-  margin-top: 60px;
+  font-size: 22px;
+  margin-top: 75px;
   font-family: "RobotoBlack";
 `;
 export const SubTitle = styled.div`
-  font-size: 15px;
+  font-size: 18px;
   font-family: "RobotoRegular";
+  color: #292929;
+  margin-top: 8px;
+  margin-bottom: 30px;
 `;
 
 export const ItemContainer = styled.div`
   max-width: 1150px;
-  gap: 70px;
   display: flex;
   flex-wrap: wrap;
 `;

@@ -26,7 +26,7 @@ export const KitchenList: React.FC<KitchenListProps> = ({
     <KitchenListContainer>
       <Title>{title}</Title>
       <OnGoingList>
-        <KitchenListCard cardButtons={buttonChoice}/>
+        <KitchenListCard cardButtons={buttonChoice} />
         <Notes display={hideNotes}>Observações:</Notes>
         <NotesContainer display={hideNotes}></NotesContainer>
       </OnGoingList>

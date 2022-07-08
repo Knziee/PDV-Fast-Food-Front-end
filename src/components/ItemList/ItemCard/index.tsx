@@ -6,12 +6,11 @@ import {
   ItemTitle,
 } from "./styles";
 
-
 interface ItemProps {
   imgSrc?: any;
   title?: string;
   description?: string;
-  price?: any;
+  price?: string;
   imgBackground?: string;
 }
 export const ItemCard: React.FC<ItemProps> = ({
