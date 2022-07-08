@@ -11,6 +11,11 @@ import shakeLeiteMocaPacoca from "../assets/images/shakeLeiteMocaPacoca.png";
 import sucoDeLaranja from "../assets/images/sucoDeLaranja.png";
 import sundaeOvoMaltino from "../assets/images/sundaeOvoMaltino.png";
 
+import acompanhamentos from "../assets/images/acompanhamentos.png";
+import bebidas from "../assets/images/bebidas.png";
+import burguer from "../assets/images/burguer.png";
+import sobremesas from "../assets/images/sobremesas.png";
+
 export const itemList = [
   {
     itemImg: cheddar,
@@ -98,4 +103,9 @@ export const itemList = [
   },
 ];
 
-
+export const categoryImages = {
+  burguerImg: burguer,
+  acompanhamentosImg: acompanhamentos,
+  bebidasImg: bebidas,
+  sobremesasImg: sobremesas,
+};

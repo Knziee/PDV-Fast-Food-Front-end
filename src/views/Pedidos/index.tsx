@@ -4,7 +4,7 @@ import { CategoryCard } from "../../components/CategoryList/CategoryCard";
 import { Header } from "../../components/Header";
 import { ItemList } from "../../components/ItemList";
 import { ItemCard } from "../../components/ItemList/ItemCard";
-import { itemList } from "../../constants/constants";
+import { categoryImages, itemList } from "../../constants/constants";
 import {
   ButtonWrapper,
   CategoryContainer,
@@ -40,22 +40,22 @@ export const Pedidos: React.FC = () => {
 
   const categoryList = [
     {
-      categoryImg: "https://i.imgur.com/5Wg6xa1.png",
+      categoryImg: categoryImages.burguerImg,
       categoryTitle: "Burguers",
       filter: filterBurguers,
     },
     {
-      categoryImg: "https://i.imgur.com/UgRVlp9.png",
+      categoryImg: categoryImages.acompanhamentosImg,
       categoryTitle: "Acompanhamentos",
       filter: filterAcompanhamento,
     },
     {
-      categoryImg: "https://i.imgur.com/itpLGEW.png",
+      categoryImg: categoryImages.bebidasImg,
       categoryTitle: "Bebidas",
       filter: filterBebida,
     },
     {
-      categoryImg: "https://i.imgur.com/6RR3CVS.png",
+      categoryImg: categoryImages.sobremesasImg,
       categoryTitle: "Sobremesas",
       filter: filterSobremesa,
     },
