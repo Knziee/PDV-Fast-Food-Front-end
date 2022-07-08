@@ -3,13 +3,11 @@ import styled from "styled-components";
 export const RetiradaWrapper = styled.div`
   height: 100%;
   max-width: 1440px;
-
   display: flex;
   margin: auto;
   flex-direction: row;
   padding-top: 70px;
-  background-color: #f2eded;
-  display: flex;
+  background-color: #ffff;
   justify-content: center;
 `;
 
@@ -24,12 +22,15 @@ export const RetiradaBox = styled.div`
 `;
 export const RetiradaTitle = styled.div`
   width: 700px;
-  font-size: 45px;
+  font-size: 55px;
   font-family: "RobotoBlack";
+  margin-left: 115px;
+  margin-bottom: 30px;
 `;
 export const RetiradaName = styled.div`
   width: 700px;
-  font-size: 80px;
-  color: ${(props: any) => (props.nameReady ? "green" : "grey")};
-  font-family: "RobotoMedium";
+  font-size: 100px;
+  color: ${(props: any) => (props.nameReady ? "#125c13" : "#9f9f9f")};
+  font-family: "RobotoBlack";
+  margin-left: 115px;
 `;

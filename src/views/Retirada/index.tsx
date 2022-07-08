@@ -13,12 +13,15 @@ export const Retirada: React.FC = () => {
       <RetiradaWrapper>
         <RetiradaBox>
           <RetiradaTitle>Preparando:</RetiradaTitle>
-          <RetiradaName>aaaa</RetiradaName>
+          <RetiradaName>Ricardo</RetiradaName>
+          <RetiradaName>Luiza</RetiradaName>
+          <RetiradaName>Fernanda</RetiradaName>
+          <RetiradaName>Bruna</RetiradaName>
         </RetiradaBox>
         <RetiradaDivider />
         <RetiradaBox>
-          <RetiradaTitle>Pronto:</RetiradaTitle>
-          <RetiradaName nameReady>aaaa</RetiradaName>
+          <RetiradaTitle>Prontos:</RetiradaTitle>
+          <RetiradaName nameReady>Camila</RetiradaName>
         </RetiradaBox>
       </RetiradaWrapper>
     </div>
