@@ -1,5 +1,4 @@
 import styled from "styled-components";
-
 import checkIcon from "../../../../assets/images/checkIcon.svg";
 import xIcon from "../../../../assets/images/xIcon.svg";
 
@@ -12,6 +11,7 @@ export const KitchenButtonBackground = styled.button`
   align-items: center;
   background-color: ${(props: any) => (props.sucess ? "#e5f5e6" : "#fae5e5")};
   opacity: 100%;
+  cursor: pointer;
 `;
 
 export const ButtonIconConfirm = styled.div`
@@ -19,11 +19,13 @@ export const ButtonIconConfirm = styled.div`
   width: 13px;
   background-image: url(${checkIcon});
 `;
+
 export const ButtonIconRemove = styled.div`
   height: 10px;
   width: 10px;
   background-image: url(${xIcon});
 `;
+
 export const ButtonsWrapper = styled.div`
   display: flex;
   align-items: center;

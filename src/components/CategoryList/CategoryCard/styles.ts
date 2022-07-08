@@ -10,6 +10,7 @@ export const CategoryBackground = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  cursor: pointer;
 `;
 
 export const CategoryTitle = styled.div`

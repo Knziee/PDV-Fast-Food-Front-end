@@ -11,6 +11,7 @@ export const KitchenButtonBackground = styled.button`
   background-color: ${(props: any) => (props.sucess ? "#e5f5e6" : "#fae5e5")};
   opacity: 100%;
   margin-left: 45px;
+  cursor: pointer;
 `;
 
 export const ButtonIconRemove = styled.div`
@@ -18,6 +19,7 @@ export const ButtonIconRemove = styled.div`
   width: 10px;
   background-image: url(${xIcon});
 `;
+
 export const ButtonsWrapper = styled.div`
   display: flex;
   align-items: center;

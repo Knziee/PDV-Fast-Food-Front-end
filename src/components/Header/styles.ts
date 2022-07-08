@@ -5,10 +5,10 @@ export const HeaderBackground = styled.div`
   height: 60px;
   width: 100%;
 `;
+
 export const HeaderContainer = styled.div`
   height: 60px;
   max-width: 1440px;
-
   display: flex;
   align-items: center;
   justify-content: space-between;

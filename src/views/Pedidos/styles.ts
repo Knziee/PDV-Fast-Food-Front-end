@@ -10,11 +10,13 @@ export const PedidosWrapper = styled.div`
   padding-top: 70px;
   background-color: #ffff;
 `;
+
 export const WelcomeMessage = styled.div`
   font-size: 30px;
   padding-bottom: 20px;
   font-family: "RobotoBlack";
 `;
+
 export const SearchBar = styled.input`
   width: 320px;
   height: 45px;
@@ -26,6 +28,7 @@ export const SearchBar = styled.input`
     color: #b3b3b3;
   }
 `;
+
 export const ButtonWrapper = styled.div`
   display: flex;
   gap: 50px;
@@ -35,12 +38,14 @@ export const ButtonWrapper = styled.div`
   justify-content: right;
   margin-right: 110px;
 `;
+
 export const ItemContainer = styled.div`
   max-width: 1150px;
   gap: 80px;
   display: flex;
   flex-wrap: wrap;
 `;
+
 export const CategoryContainer = styled.div`
   display: flex;
   gap: 70px;

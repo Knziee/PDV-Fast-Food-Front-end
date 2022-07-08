@@ -4,13 +4,7 @@ import {
   KitchenButtonBackground,
 } from "./styles";
 
-interface KitchenButtonProps {
-  background?: string;
-}
-
-export const KitchenReadyButton: React.FC<KitchenButtonProps> = ({
-  background,
-}) => {
+export const KitchenReadyButton: React.FC = () => {
   return (
     <ButtonsWrapper>
       <KitchenButtonBackground>

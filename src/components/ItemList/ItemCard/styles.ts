@@ -13,6 +13,7 @@ export const ItemBackground = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  cursor: pointer;
 `;
 
 export const ItemImgBackground = styled.div`
@@ -35,6 +36,7 @@ export const ItemTitle = styled.div`
   margin-bottom: 5px;
   font-family: "RobotoBlack";
 `;
+
 export const ItemDescription = styled.div`
   font-size: 12px;
   color: #515151;
@@ -42,6 +44,7 @@ export const ItemDescription = styled.div`
   margin-bottom: 20px;
   font-family: "RobotoRegular";
 `;
+
 export const ItemPrice = styled.div`
   font-size: 18px;
   text-align: center;

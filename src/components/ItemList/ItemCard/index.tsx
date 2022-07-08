@@ -11,14 +11,13 @@ interface ItemProps {
   title?: string;
   description?: string;
   price?: string;
-  imgBackground?: string;
 }
+
 export const ItemCard: React.FC<ItemProps> = ({
   title,
   imgSrc,
   description,
   price,
-  imgBackground,
 }) => {
   return (
     <ItemImgBackground red>

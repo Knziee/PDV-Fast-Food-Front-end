@@ -1,3 +1,4 @@
+import { KitchenListCard } from "./KitchenItemCard";
 import {
   KitchenListContainer,
   Notes,
@@ -6,19 +7,14 @@ import {
   Title,
 } from "./styles";
 
-import { KitchenListCard } from "./KitchenItemCard";
-import {KitchenButtons} from "./KitchenItemCard/KitchenButton"
-
 interface KitchenListProps {
   title?: string;
-  cardDone?: string;
   buttonChoice?: any;
   hideNotes?: string;
 }
 
 export const KitchenList: React.FC<KitchenListProps> = ({
   title,
-  cardDone,
   buttonChoice,
   hideNotes,
 }) => {

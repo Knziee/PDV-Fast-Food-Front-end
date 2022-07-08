@@ -6,6 +6,7 @@ export const KitchenListContainer = styled.div`
   display: flex;
   flex-direction: column;
 `;
+
 export const Title = styled.div`
   font-size: 30px;
   font-family: "RobotoBlack";
@@ -26,6 +27,7 @@ export const Notes = styled.div`
   font-family: "RobotoBlack";
   margin-bottom: 10px;
 `;
+
 export const NotesContainer = styled.div`
   height: 80px;
   max-width: 400px;

@@ -5,7 +5,12 @@ interface CategoryProps {
   title: string;
   action?: any;
 }
-export const CategoryCard: React.FC<CategoryProps> = ({ title, imgSrc,action }) => {
+
+export const CategoryCard: React.FC<CategoryProps> = ({
+  title,
+  imgSrc,
+  action,
+}) => {
   return (
     <CategoryBackground onClick={action}>
       <img

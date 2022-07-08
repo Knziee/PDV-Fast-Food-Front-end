@@ -5,6 +5,7 @@ export const Title = styled.div`
   margin-top: 75px;
   font-family: "RobotoBlack";
 `;
+
 export const SubTitle = styled.div`
   font-size: 18px;
   font-family: "RobotoRegular";
@@ -12,4 +13,3 @@ export const SubTitle = styled.div`
   margin-top: 8px;
   margin-bottom: 30px;
 `;
-

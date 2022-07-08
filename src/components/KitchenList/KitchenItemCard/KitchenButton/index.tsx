@@ -5,18 +5,12 @@ import {
   KitchenButtonBackground,
 } from "./styles";
 
-interface KitchenButtonProps {
-  background?: string;
-}
-
-export const KitchenButtons: React.FC<KitchenButtonProps> = ({
-  background,
-}) => {
+export const KitchenButtons: React.FC = () => {
   return (
     <ButtonsWrapper>
       <KitchenButtonBackground>
         <ButtonIconRemove />
-      </KitchenButtonBackground>{" "}
+      </KitchenButtonBackground>
       <KitchenButtonBackground sucess>
         <ButtonIconConfirm />
       </KitchenButtonBackground>

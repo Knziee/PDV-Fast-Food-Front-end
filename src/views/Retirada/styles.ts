@@ -20,6 +20,7 @@ export const RetiradaDivider = styled.div`
 export const RetiradaBox = styled.div`
   width: 700px;
 `;
+
 export const RetiradaTitle = styled.div`
   width: 700px;
   font-size: 55px;
@@ -27,6 +28,7 @@ export const RetiradaTitle = styled.div`
   margin-left: 115px;
   margin-bottom: 30px;
 `;
+
 export const RetiradaName = styled.div`
   width: 700px;
   font-size: 100px;

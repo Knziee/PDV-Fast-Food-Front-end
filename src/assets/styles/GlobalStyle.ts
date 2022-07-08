@@ -10,7 +10,4 @@ export default createGlobalStyle`
       color: inherit;
     }
 }
-body {
-  /* background-color: #0F9246;  */
-}
 `;
