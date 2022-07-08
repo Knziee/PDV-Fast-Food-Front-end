@@ -13,8 +13,3 @@ export const SubTitle = styled.div`
   margin-bottom: 30px;
 `;
 
-export const ItemContainer = styled.div`
-  max-width: 1150px;
-  display: flex;
-  flex-wrap: wrap;
-`;
