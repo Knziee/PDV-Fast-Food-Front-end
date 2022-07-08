@@ -9,10 +9,12 @@ export const CardContainer = styled.div`
   background-color: #ffff;
 `;
 export const Title = styled.div`
-  font-size: 25px;
-  margin-top: 20px;
+  font-size: 18px;
+  margin-top: 25px;
+  font-family: "RobotoBlack";
 `;
 export const Description = styled.div`
   font-size: 15px;
+  font-family: "RobotoRegular";
 `;
 

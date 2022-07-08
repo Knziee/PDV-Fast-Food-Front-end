@@ -14,4 +14,6 @@ export const HeaderContainer = styled.div`
   justify-content: space-between;
   margin-left: 20px;
   margin: auto;
+  font-family: "RobotoMedium";
+  font-size: 15px;
 `;

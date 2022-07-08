@@ -33,16 +33,19 @@ export const ItemTitle = styled.div`
   font-size: 20px;
   text-align: center;
   margin-bottom: 5px;
+  font-family: "RobotoBlack";
 `;
 export const ItemDescription = styled.div`
   font-size: 12px;
   color: grey;
   text-align: center;
   margin-bottom: 20px;
+  font-family: "RobotoRegular";
 `;
 export const ItemPrice = styled.div`
   font-size: 15px;
   text-align: center;
   margin-bottom: -50px;
   padding-bottom: 20px;
+  font-family: "RobotoBlack";
 `;

@@ -11,6 +11,7 @@ export const LogoIcon = styled.div`
 export const LogoText = styled.div`
   font-size: 25px;
   color: white;
+  font-family: "RobotoMedium";
 `;
 
 export const LogoContainer = styled.div`

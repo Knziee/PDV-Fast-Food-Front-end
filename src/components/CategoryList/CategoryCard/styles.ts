@@ -13,5 +13,6 @@ export const CategoryBackground = styled.div`
 `;
 
 export const CategoryTitle = styled.div`
-  font-size: 20px;
+  font-size: 15px;
+  font-family: "RobotoBlack";
 `;

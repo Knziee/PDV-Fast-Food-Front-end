@@ -25,9 +25,12 @@ export const RetiradaBox = styled.div`
 export const RetiradaTitle = styled.div`
   width: 700px;
   font-size: 45px;
+  font-family: "RobotoBlack";
+
 `;
 export const RetiradaName = styled.div`
   width: 700px;
   font-size: 80px;
   color: ${(props: any) => (props.nameReady ? "green" : "grey")};;
+  font-family: "RobotoMedium";
 `;

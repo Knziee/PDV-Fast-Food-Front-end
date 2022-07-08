@@ -1,7 +1,7 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 import GlobalStyle from "./assets/styles/GlobalStyle";
-import {} from "./assets/fonts/fonts";
+import {FontStyles} from "./assets/fonts/fonts";
 import App from "./App";
 
 const root = ReactDOM.createRoot(
@@ -10,7 +10,7 @@ const root = ReactDOM.createRoot(
 root.render(
   <React.StrictMode>
     <GlobalStyle />
-    {/* <FontStyles /> */}
+    <FontStyles />
     <App />
   </React.StrictMode>
 );

@@ -14,12 +14,14 @@ export const PedidosWrapper = styled.div`
 export const WelcomeMessage = styled.div`
   font-size: 30px;
   padding-bottom: 10px;
+  font-family: "RobotoBlack";
 `;
 export const SearchBar = styled.input`
   width: 320px;
   height: 45px;
   background-color: #f4f4f4;
   padding-left: 15px;
+  font-family: "RobotoRegular";
 `;
 export const ButtonWrapper = styled.div`
   display: flex;

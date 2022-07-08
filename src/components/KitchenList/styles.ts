@@ -11,6 +11,7 @@ export const KitchenListContainer = styled.div`
 `;
 export const Title = styled.div`
   font-size: 25px;
+  font-family: "RobotoBlack";
 `;
 
 export const OnGoingList = styled.div`
@@ -26,7 +27,8 @@ export const OnGoingList = styled.div`
 export const Notes = styled.div`
   font-size: 15px;
   margin-top: 20px;
-  display: ${(props: any) => props.display}
+  display: ${(props: any) => props.display};
+  font-family: "RobotoBlack";
 `;
 export const NotesContainer = styled.div`
   height: 100%;
@@ -34,7 +36,8 @@ export const NotesContainer = styled.div`
   border: 1px solid black;
   border-radius: 10px;
   margin-bottom: 80px;
-  display: ${(props: any) => props.display}
+  display: ${(props: any) => props.display};
+  font-family: "RobotoRegular";
 `;
 
 

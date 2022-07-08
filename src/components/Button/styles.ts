@@ -14,4 +14,5 @@ export const ButtonBackground = styled.button`
 export const ButtonText = styled.div`
   font-size: 20px;
   color: white;
+  font-family: "RobotoMedium";
 `;
