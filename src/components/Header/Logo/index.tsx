@@ -4,7 +4,7 @@ export const Logo: React.FC = () => {
   return (
     <LogoContainer>
       <LogoIcon />
-      <LogoText>fastfood</LogoText>
+      <LogoText>Devios Lanches</LogoText>
     </LogoContainer>
   );
 };

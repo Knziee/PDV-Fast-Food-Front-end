@@ -1,11 +1,12 @@
 import styled from "styled-components";
-import LogoIconSVG from "../../../assets/images/Hamburger-04.svg";
+import LogoIconSVG from "../../../assets/images/logoIcon.svg";
 
 export const LogoIcon = styled.div`
   background-image: url(${LogoIconSVG});
   width: 30px;
   height: 30px;
-  color: white;
+  filter: invert();
+  margin-right: 10px;
 `;
 
 export const LogoText = styled.div`
