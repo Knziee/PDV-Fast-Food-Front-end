@@ -3,10 +3,11 @@ import { CategoryBackground, CategoryTitle } from "./styles";
 interface CategoryProps {
   imgSrc?: any;
   title: string;
+  action?: any;
 }
-export const CategoryCard: React.FC<CategoryProps> = ({ title, imgSrc }) => {
+export const CategoryCard: React.FC<CategoryProps> = ({ title, imgSrc,action }) => {
   return (
-    <CategoryBackground>
+    <CategoryBackground onClick={action}>
       <img
         src={imgSrc}
         alt=""

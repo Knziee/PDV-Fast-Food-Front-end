@@ -28,3 +28,14 @@ export const ButtonWrapper = styled.div`
   margin-top: 80px;
   margin-bottom: 120px;
 `;
+export const ItemContainer = styled.div`
+  max-width: 1150px;
+  gap: 70px;
+  display: flex;
+  flex-wrap: wrap;
+`;
+export const CategoryContainer = styled.div`
+  display: flex;
+  gap: 70px;
+  flex-direction: row;
+`;
