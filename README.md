@@ -1,46 +1,82 @@
-# Getting Started with Create React App
+<table align="center" >
+    <tr>
+     <td align="center" width="900px;">
+        <img src="https://i.imgur.com/4RH9qEe.png" width="150px;" align="left" alt="imgur"/>
+       <h1 align="center" >Devio | TESTE TÉCNICO FRONT-END</h1><BR>
+        <h1 align="bottom" ><a href="https://pdv-fast-food-front-end.vercel.app/" >:hamburger: www.pdvfastfood.com.br</h1><BR>
+        <sub>
+        </sub>
+      </a>
+   
+</tr>
+<table/>
+ 
+ <br>
+ 
+## Requisitos:
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Desenvolver uma solução para um restaurante que deseja ter um ambiente intuitivo listando os produtos vendidos e possibilidade de facil inserção dos mesmos no checkout, com um visual simples e moderno.
+     
 
-## Available Scripts
+Dentre os requisitos, estão:
+- A linguagem utilizada deve ser JS.
+- Deverá ser desenvolvido utilizando as versões mais recentes.
+- Utilizar dos Padrões Devio.
+- Seguir o Protótipo.
+- Ser responsivo.
+       
+    
+### :boom: Demonstração em produção:
+<table align="center">
+  <tr>
+     <td align="center">
+  <img src="https://i.imgur.com/3PRM5pn.png" alt="imgur"/>
+        <sub>
+        </sub>
+      </a>
+   
+</tr>
+<table/>
 
-In the project directory, you can run:
+## 🛠 Tecnologias:
 
-### `npm start`
+As seguintes ferramentas foram usadas na construção do desafio:
+       
+- ReactJs
+- Javascript
+- Typescript
+- react-router-dom
+- styled-components
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
-
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+## :package: Rodando a aplicação localmente:
+```
+# Abra um terminal e clone este repositório 
+$ git clone https://github.com/Knziee/PDV-Fast-Food-Front-end.git
+# Acesse a pasta do projeto no seu terminal/cmd
+$ cd PDV-Fast-Food-Front-end
+# Instale as dependências
+$ npm install
+# Rode a aplicação
+$ npm start  
+```
+       
+## 🚀 Deploy da aplicação:
+ - <a href="https://pdv-fast-food-front-end.vercel.app/" > Via Vercel
+       
+       
+## 💻 Desenvolvido por:
+  
+<table align="left">
+  <tr>
+     <td align="center">
+      <a href="https://github.com/Knziee">
+        <img src="https://avatars.githubusercontent.com/u/89425394?s=96&v=4" width="80px;" alt="github"/><br>
+        <sub>
+          <b> Rhuan Martins Software Developer 👨‍💻</b>
+        </sub>
+      </a>       
+    </td>   
+                                                                                                              
+  </tr>
+</table>
+<br>
