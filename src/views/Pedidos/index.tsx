@@ -138,7 +138,7 @@ export const Pedidos: React.FC = () => {
         </ItemContainer>
         <ButtonWrapper>
           <Button
-            background="none"
+            background="#fff"
             borderColor="#9f9f9f"
             text="Cancelar"
             width="350px"
