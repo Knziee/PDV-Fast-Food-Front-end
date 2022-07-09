@@ -7,6 +7,7 @@ export const LogoIcon = styled.div`
   height: 30px;
   filter: invert();
   margin-right: 10px;
+  margin-left: 40px;
 `;
 
 export const LogoText = styled.div`
