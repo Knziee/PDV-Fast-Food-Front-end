@@ -52,3 +52,14 @@ export const ItemPrice = styled.div`
   padding-bottom: 20px;
   font-family: "RobotoBlack";
 `;
+
+export const ItemSelected = styled.div`
+  width: inherit;
+  height: inherit;
+  cursor: pointer;
+  background-color: #1fdd1f;
+  position: absolute;
+  border-radius: 20px;
+  opacity: 80%;
+  display: ${(props: any) => (props.visible === "yes" ? "flex" : "none")};
+`;

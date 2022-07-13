@@ -5,3 +5,4 @@ declare module "*.svg";
 declare module "styled-components";
 declare module "*.ttf";
 declare module "react-router-dom";
+declare module "react-modal";

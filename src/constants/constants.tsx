@@ -18,6 +18,7 @@ import sobremesas from "../assets/images/sobremesas.png";
 
 export const itemList = [
   {
+    id: 1,
     itemImg: cheddar,
     itemTitle: "Cheddar",
     description: "Hmm queijo cheddar",
@@ -25,6 +26,7 @@ export const itemList = [
     itemCategory: "burguer",
   },
   {
+    id: 2,
     itemImg: ihaaDuplo,
     itemTitle: "Ihaa Duplo",
     description: "Dois deliciosos hambúrgueres grelhados ",
@@ -32,6 +34,7 @@ export const itemList = [
     itemCategory: "burguer",
   },
   {
+    id: 3,
     itemImg: estacado,
     itemTitle: "Estacado",
     description: "Se uma camada de cheddar já é bom...",
@@ -39,6 +42,7 @@ export const itemList = [
     itemCategory: "burguer",
   },
   {
+    id: 4,
     itemImg: kabooom,
     itemTitle: "Kaboom",
     description: "quatro carnes e quatro camadas de queijo e bacon",
@@ -46,13 +50,15 @@ export const itemList = [
     itemCategory: "burguer",
   },
   {
+    id: 5,
     itemImg: batataFrita,
-    itemTitle: "Crocantes e irresistíveis",
-    description: "Cheddar",
+    itemTitle: "Batatas Fritas",
+    description: "Crocantes e irresistiveis",
     price: "8,59",
     itemCategory: "acompanhamento",
   },
   {
+    id: 6,
     itemImg: onionRing,
     itemTitle: "Onion Ring",
     description: "fresquinhas e crocantes",
@@ -60,6 +66,7 @@ export const itemList = [
     itemCategory: "acompanhamento",
   },
   {
+    id: 7,
     itemImg: nuggets,
     itemTitle: "Nuggets",
     description: "crocantes e com tempero suave",
@@ -67,6 +74,7 @@ export const itemList = [
     itemCategory: "acompanhamento",
   },
   {
+    id: 8,
     itemImg: misturao,
     itemTitle: "Misturão",
     description: "Batata frita com cheddar e bacon crocante",
@@ -74,6 +82,7 @@ export const itemList = [
     itemCategory: "acompanhamento",
   },
   {
+    id: 9,
     itemImg: sucoDeLaranja,
     itemTitle: "Suco de Larnja",
     description: "100% natural",
@@ -81,6 +90,7 @@ export const itemList = [
     itemCategory: "bebida",
   },
   {
+    id: 10,
     itemImg: h20Limao,
     itemTitle: "H20 Limão",
     description: "Sabor Limão",
@@ -88,6 +98,7 @@ export const itemList = [
     itemCategory: "bebida",
   },
   {
+    id: 11,
     itemImg: shakeLeiteMocaPacoca,
     itemTitle: "Shake de Leite Moça com Paçoca",
     description: "Uma deliciosa sobremesa ",
@@ -95,6 +106,7 @@ export const itemList = [
     itemCategory: "sobremesa",
   },
   {
+    id: 12,
     itemImg: sundaeOvoMaltino,
     itemTitle: "Sundae Ovo Maltino",
     description: "Sabor Ovomaltine",

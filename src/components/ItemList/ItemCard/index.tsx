@@ -3,6 +3,7 @@ import {
   ItemDescription,
   ItemImgBackground,
   ItemPrice,
+  ItemSelected,
   ItemTitle,
 } from "./styles";
 
@@ -11,6 +12,7 @@ interface ItemProps {
   title?: string;
   description?: string;
   price?: string;
+  selected?: string;
 }
 
 export const ItemCard: React.FC<ItemProps> = ({
@@ -18,9 +20,11 @@ export const ItemCard: React.FC<ItemProps> = ({
   imgSrc,
   description,
   price,
+  selected,
 }) => {
   return (
     <ItemImgBackground red>
+      <ItemSelected visible={selected} />
       <ItemBackground>
         <img
           src={imgSrc}

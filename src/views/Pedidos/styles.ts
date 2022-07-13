@@ -51,3 +51,9 @@ export const CategoryContainer = styled.div`
   gap: 70px;
   flex-direction: row;
 `;
+
+export const CartContainer = styled.div`
+  display: flex;
+  gap: 70px;
+  flex-direction: column;
+`;
