@@ -14,8 +14,17 @@ import {
   CartContainer,
   CategoryContainer,
   ItemContainer,
+  NoteInput,
+  NoteTitle,
   PedidosWrapper,
   SearchBar,
+  SummaryContainer,
+  SummaryLine,
+  SummaryPrice,
+  SummaryTitle,
+  SummaryTitlePriceBox,
+  SummaryTotalPrice,
+  SummaryTotalPriceBox,
   WelcomeMessage,
 } from "./styles";
 
@@ -25,7 +34,7 @@ export const Pedidos: React.FC = () => {
   const [useCategory, setUseCategory] = useState(false);
   const [modalIsOpen, setIsOpen] = useState(false);
   const [isSelected, SetIsSelected] = useState("nop");
-  const [cart, setCart] = useState([""]);
+  const [cart, setCart]: any = useState([""]);
 
   const filterBurguers = () => {
     setCategory("burguer");
@@ -101,6 +110,17 @@ export const Pedidos: React.FC = () => {
     // if (cart.indexOf(itemList) !== -1) return;
     // setCart([...cart, itemList])
   };
+  const handleClickRemove = (cart: any) => {
+    cart.splice(cart)
+  };
+
+  let sum = 0;
+  for (let index = 0; index < cart.length; index++) {
+    parseInt(cart.price, 10);
+    sum += cart[index].price;
+  }
+
+  console.log(sum);
 
   return (
     <div>
@@ -212,20 +232,51 @@ export const Pedidos: React.FC = () => {
           <button onClick={closeModal}>close</button>
           <div>I am a modal</div>
 
-          {cart.map((cart: any, index) => {
+          {cart.map((cart: any, index: any) => {
             return (
-              <CartContainer>
-                <CartCard
-                  title={cart.itemTitle}
-                  imgSrc={cart.itemImg}
-                  key={index}
-                  description={cart.description}
-                  price={"R$" + cart.price}
-                  cardButtons={<KitchenReadyButton />}
-                />
-              </CartContainer>
+              <div>
+                <CartContainer >
+                  <CartCard
+                    title={cart.itemTitle}
+                    imgSrc={cart.itemImg}
+                    key={index}
+                    description={cart.description}
+                    price={"R$" + cart.price}
+                    cardButtons={
+                      <div onClick={handleClickRemove}>
+                        <KitchenReadyButton />
+                      </div>
+                    }
+                  />
+                </CartContainer>
+              </div>
             );
           })}
+          <NoteTitle>Observações</NoteTitle>
+          <NoteInput placeholder="Adicione observações ao pedido" />
+
+          <ButtonWrapper>
+            <div onClick={closeModal}>
+              <Button
+                background="#fff"
+                borderColor="#9f9f9f"
+                text="Continuar adicionando"
+                width="350px"
+                height="40px"
+                color="#9f9f9f"
+              />
+            </div>
+            <div>
+              <Button
+                background="#9f9f9f"
+                borderColor="#9f9f9f"
+                text="Adicionar ao pedido"
+                width="350px"
+                height="40px"
+                color="#fff"
+              />
+            </div>
+          </ButtonWrapper>
         </Modal>
       </PedidosWrapper>
     </div>

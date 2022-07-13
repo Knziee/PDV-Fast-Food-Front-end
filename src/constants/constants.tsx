@@ -22,7 +22,7 @@ export const itemList = [
     itemImg: cheddar,
     itemTitle: "Cheddar",
     description: "Hmm queijo cheddar",
-    price: "10,99",
+    price: 10.99,
     itemCategory: "burguer",
   },
   {
@@ -30,7 +30,7 @@ export const itemList = [
     itemImg: ihaaDuplo,
     itemTitle: "Ihaa Duplo",
     description: "Dois deliciosos hambúrgueres grelhados ",
-    price: "13,99",
+    price: 13.99,
     itemCategory: "burguer",
   },
   {
@@ -38,7 +38,7 @@ export const itemList = [
     itemImg: estacado,
     itemTitle: "Estacado",
     description: "Se uma camada de cheddar já é bom...",
-    price: "18,99",
+    price: 18.99,
     itemCategory: "burguer",
   },
   {
@@ -46,7 +46,7 @@ export const itemList = [
     itemImg: kabooom,
     itemTitle: "Kaboom",
     description: "quatro carnes e quatro camadas de queijo e bacon",
-    price: "28,99",
+    price: 28.99,
     itemCategory: "burguer",
   },
   {
@@ -54,7 +54,7 @@ export const itemList = [
     itemImg: batataFrita,
     itemTitle: "Batatas Fritas",
     description: "Crocantes e irresistiveis",
-    price: "8,59",
+    price: 8.59,
     itemCategory: "acompanhamento",
   },
   {
@@ -62,7 +62,7 @@ export const itemList = [
     itemImg: onionRing,
     itemTitle: "Onion Ring",
     description: "fresquinhas e crocantes",
-    price: "8,59",
+    price: 8.59,
     itemCategory: "acompanhamento",
   },
   {
@@ -70,7 +70,7 @@ export const itemList = [
     itemImg: nuggets,
     itemTitle: "Nuggets",
     description: "crocantes e com tempero suave",
-    price: "8,59",
+    price: 8.59,
     itemCategory: "acompanhamento",
   },
   {
@@ -78,7 +78,7 @@ export const itemList = [
     itemImg: misturao,
     itemTitle: "Misturão",
     description: "Batata frita com cheddar e bacon crocante",
-    price: "14,59",
+    price: 14.59,
     itemCategory: "acompanhamento",
   },
   {
@@ -86,7 +86,7 @@ export const itemList = [
     itemImg: sucoDeLaranja,
     itemTitle: "Suco de Larnja",
     description: "100% natural",
-    price: "9,99",
+    price: 9.99,
     itemCategory: "bebida",
   },
   {
@@ -94,7 +94,7 @@ export const itemList = [
     itemImg: h20Limao,
     itemTitle: "H20 Limão",
     description: "Sabor Limão",
-    price: "9,99",
+    price: 9.99,
     itemCategory: "bebida",
   },
   {
@@ -102,7 +102,7 @@ export const itemList = [
     itemImg: shakeLeiteMocaPacoca,
     itemTitle: "Shake de Leite Moça com Paçoca",
     description: "Uma deliciosa sobremesa ",
-    price: "11,99",
+    price: 11.99,
     itemCategory: "sobremesa",
   },
   {
@@ -110,7 +110,7 @@ export const itemList = [
     itemImg: sundaeOvoMaltino,
     itemTitle: "Sundae Ovo Maltino",
     description: "Sabor Ovomaltine",
-    price: "6,99",
+    price: 6.99,
     itemCategory: "sobremesa",
   },
 ];

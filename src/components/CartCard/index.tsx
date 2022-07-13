@@ -30,7 +30,6 @@ export const CartCard: React.FC<CartCardProps> = ({
       </Title></ImageTitleDescriptionBox>
       <PriceButtonBox>
         <Price> {price}</Price>
-
         {cardButtons}
       </PriceButtonBox>
     </CardContainer>
