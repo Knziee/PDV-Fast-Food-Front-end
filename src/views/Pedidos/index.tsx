@@ -196,18 +196,7 @@ export const Pedidos: React.FC = () => {
         >
           <button onClick={closeModal}>close</button>
           <div>I am a modal</div>
-          <Cart />
-          <div onClick={closeModal}>
-            <Button
-              background="#9f9f9f"
-              borderColor="#9f9f9f"
-              text="Continuar adicionando"
-              width="350px"
-              height="60px"
-              color="#fff"
-            />
-          </div>
-          
+          <Cart closeModalProp={closeModal}/>       
         </Modal>
       </PedidosWrapper>
     </div>

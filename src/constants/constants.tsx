@@ -121,3 +121,5 @@ export const categoryImages = {
   bebidasImg: bebidas,
   sobremesasImg: sobremesas,
 };
+
+export const kitchenItemList:any = []
