@@ -1,7 +1,9 @@
-import { useState } from "react";
+import { useRef, useState } from "react";
 import { useCart } from "react-use-cart";
 import { Button } from "../Button";
 import {} from "./styles";
+
+import { useReactToPrint } from "react-to-print";
 
 interface CartProps {
   closeModalProp?: any;
@@ -33,13 +35,18 @@ export const Cart: React.FC<CartProps> = ({ closeModalProp }) => {
       transform: "translate(-50%, -50%)",
     },
   };
+  const componentRef: any = useRef();
+  const handlePrint = useReactToPrint({
+    content: () => componentRef.current,
+  });
 
   function openPayment() {
     setPaymentsIsOpen(true);
     console.log("funfobotao");
   }
 
-  const changeCalc =  inputChange < cartTotal ? " Valor insuficiente " : inputChange - cartTotal;
+  const changeCalc =
+    inputChange < cartTotal ? " Valor insuficiente " : inputChange - cartTotal;
 
   if (isEmpty) return <div>Adicione um item!</div>;
   return (
@@ -89,53 +96,59 @@ export const Cart: React.FC<CartProps> = ({ closeModalProp }) => {
           </div>
         </div>
       </div>
-      <div style={{ display: paymentsIsOpen === false ? "none" : "block" }}>
-        <h1>Pagamento</h1>
-        <div>Resumo da compra</div>
-        <br />
-        {items.map((item: any, index: any) => {
-          return (
+      <div ref={componentRef}>
+        <div style={{ display: paymentsIsOpen === false ? "none" : "block" }}>
+          <h1>Pagamento</h1>
+          <div>Resumo da compra</div>
+          <br />
+          {items.map((item: any, index: any) => {
+            return (
+              <div>
+                <tr>
+                  <td>{item.quantity}</td>
+                  <td>{item.itemTitle}</td>
+                  <td>{item.price}</td>
+                </tr>
+              </div>
+            );
+          })}
+          <br />
+          <div>
+            <div>Valor total da compra: {cartTotal}</div>
             <div>
-              <tr>
-                <td>{item.quantity}</td>
-                <td>{item.itemTitle}</td>
-                <td>{item.price}</td>
-              </tr>
+              <label>Nome do cliente</label>
+              <input
+                placeholder="Insira seu nome"
+                onChange={(e) => setInputName(e.target.value)}
+              ></input>
             </div>
-          );
-        })}
-        <br />
-        <div>
-          <div>Valor total da compra: {cartTotal}</div>
-          <div>
-            <label>Nome do cliente</label>
-            <input placeholder="Insira seu nome"></input>
+            <div>Selecione as formas de pagamento:</div>{" "}
+            <select>
+              <option>Debito</option> <option>Credito</option>{" "}
+              <option>Dinheiro</option>
+            </select>
           </div>
-          <div>Selecione as formas de pagamento:</div>
-          <div>Debito</div> <div>Credito</div>
-          <div>Dinheiro</div>
-        </div>
-        <div>
-          <label>Valor entregue:</label>
-          <input
-            placeholder="insira o valor"
-            value={inputChange}
-            onChange={(e) => setInputChange(e.target.value)}
-          ></input>
-          <label>Troco:</label>
-          <div>{changeCalc}</div>
-
           <div>
-            <Button
-              background="#fff"
-              borderColor="#9f9f9f"
-              text="Concluir pedido"
-              width="350px"
-              height="50px"
-              color="#9f9f9f"
-            />
+            <label>Valor entregue:</label>
+            <input
+              placeholder="insira o valor"
+              value={inputChange}
+              onChange={(e) => setInputChange(e.target.value)}
+            ></input>
+            <label>Troco:</label>
+            <div>{changeCalc}</div>
           </div>
         </div>
+      </div>
+      <div onClick={handlePrint}>
+        <Button
+          background="#fff"
+          borderColor="#9f9f9f"
+          text="Concluir pedido"
+          width="350px"
+          height="50px"
+          color="#9f9f9f"
+        />
       </div>
     </div>
   );
