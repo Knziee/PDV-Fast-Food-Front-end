@@ -1,30 +1,21 @@
 import { useState } from "react";
 import Modal from "react-modal";
+import { useCart } from "react-use-cart";
 import { Button } from "../../components/Button";
-import { CartCard } from "../../components/CartCard";
+import { Cart } from "../../components/Cart";
 import { CategoryList } from "../../components/CategoryList";
 import { CategoryCard } from "../../components/CategoryList/CategoryCard";
 import { Header } from "../../components/Header";
 import { ItemList } from "../../components/ItemList";
 import { ItemCard } from "../../components/ItemList/ItemCard";
-import { KitchenReadyButton } from "../../components/KitchenList/KitchenItemCard/KitchenReadyButton";
+import { Pagamento } from "../../components/Pagamento";
 import { categoryImages, itemList } from "../../constants/constants";
 import {
   ButtonWrapper,
-  CartContainer,
   CategoryContainer,
   ItemContainer,
-  NoteInput,
-  NoteTitle,
   PedidosWrapper,
   SearchBar,
-  SummaryContainer,
-  SummaryLine,
-  SummaryPrice,
-  SummaryTitle,
-  SummaryTitlePriceBox,
-  SummaryTotalPrice,
-  SummaryTotalPriceBox,
   WelcomeMessage,
 } from "./styles";
 
@@ -34,7 +25,6 @@ export const Pedidos: React.FC = () => {
   const [useCategory, setUseCategory] = useState(false);
   const [modalIsOpen, setIsOpen] = useState(false);
   const [isSelected, SetIsSelected] = useState("nop");
-  const [cart, setCart]: any = useState([""]);
 
   const filterBurguers = () => {
     setCategory("burguer");
@@ -94,33 +84,8 @@ export const Pedidos: React.FC = () => {
   function closeModal() {
     setIsOpen(false);
   }
-  function selectItem() {
-    if (isSelected === "nop") {
-      SetIsSelected("yes");
-      console.log("sim");
-    } else if (isSelected === "yes") {
-      SetIsSelected("nop");
-      console.log("nao");
-    }
-  }
 
-  const handleClick = (itemList: any) => {
-    cart.push(itemList);
-    console.log(cart);
-    // if (cart.indexOf(itemList) !== -1) return;
-    // setCart([...cart, itemList])
-  };
-  const handleClickRemove = (cart: any) => {
-    cart.splice(cart)
-  };
-
-  let sum = 0;
-  for (let index = 0; index < cart.length; index++) {
-    parseInt(cart.price, 10);
-    sum += cart[index].price;
-  }
-
-  console.log(sum);
+  const { addItem } = useCart();
 
   return (
     <div>
@@ -164,7 +129,7 @@ export const Pedidos: React.FC = () => {
                 })
                 .map((itemList, index) => {
                   return (
-                    <div onClick={() => handleClick(itemList)}>
+                    <div onClick={() => addItem(itemList)}>
                       <ItemCard
                         title={itemList.itemTitle}
                         imgSrc={itemList.itemImg}
@@ -190,7 +155,7 @@ export const Pedidos: React.FC = () => {
                 })
                 .map((itemList, index) => {
                   return (
-                    <div onClick={() => handleClick(itemList)}>
+                    <div onClick={() => addItem(itemList)}>
                       <ItemCard
                         title={itemList.itemTitle}
                         imgSrc={itemList.itemImg}
@@ -231,52 +196,18 @@ export const Pedidos: React.FC = () => {
         >
           <button onClick={closeModal}>close</button>
           <div>I am a modal</div>
-
-          {cart.map((cart: any, index: any) => {
-            return (
-              <div>
-                <CartContainer >
-                  <CartCard
-                    title={cart.itemTitle}
-                    imgSrc={cart.itemImg}
-                    key={index}
-                    description={cart.description}
-                    price={"R$" + cart.price}
-                    cardButtons={
-                      <div onClick={handleClickRemove}>
-                        <KitchenReadyButton />
-                      </div>
-                    }
-                  />
-                </CartContainer>
-              </div>
-            );
-          })}
-          <NoteTitle>Observações</NoteTitle>
-          <NoteInput placeholder="Adicione observações ao pedido" />
-
-          <ButtonWrapper>
-            <div onClick={closeModal}>
-              <Button
-                background="#fff"
-                borderColor="#9f9f9f"
-                text="Continuar adicionando"
-                width="350px"
-                height="40px"
-                color="#9f9f9f"
-              />
-            </div>
-            <div>
-              <Button
-                background="#9f9f9f"
-                borderColor="#9f9f9f"
-                text="Adicionar ao pedido"
-                width="350px"
-                height="40px"
-                color="#fff"
-              />
-            </div>
-          </ButtonWrapper>
+          <Cart />
+          <div onClick={closeModal}>
+            <Button
+              background="#9f9f9f"
+              borderColor="#9f9f9f"
+              text="Continuar adicionando"
+              width="350px"
+              height="60px"
+              color="#fff"
+            />
+          </div>
+          
         </Modal>
       </PedidosWrapper>
     </div>

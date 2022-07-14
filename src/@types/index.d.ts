@@ -6,3 +6,4 @@ declare module "styled-components";
 declare module "*.ttf";
 declare module "react-router-dom";
 declare module "react-modal";
+declare module "react-use-cart"
