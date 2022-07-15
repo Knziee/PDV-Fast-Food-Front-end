@@ -58,46 +58,10 @@ export const CartContainer = styled.div`
   flex-direction: column;
 `;
 
-export const NoteTitle = styled.div`
-  font-size: 25px;
-  font-family: "RobotoBlack";
+export const CloseButtonWrapper = styled.div`
+  text-align: right;
+  filter: invert(72%) sepia(0%) saturate(0%) hue-rotate(192deg) brightness(89%)
+    contrast(88%);
+  margin-top: 20px;
+  margin-right: 20px;
 `;
-export const NoteInput = styled.input`
-  background-color: lightgrey;
-  height: 100px;
-  width: 400px;
-`;
-export const SummaryContainer = styled.div`
-  height: 250px;
-  width: 600px;
-  display: flex;
-  flex-direction: column;
-  border: 1px solid black;
-  transform:scale(0.5);
-`;
-
-export const SummaryTitle = styled.div`
-  font-size: 18px;
-  font-family: "RobotoRegular";
-`;
-
-export const SummaryPrice = styled.div`
-  font-size: 18px;
-  font-family: "RobotoRegular";
-  color: "#878787";
-`;
-export const SummaryTitlePriceBox = styled.div`
-  display: flex;
-  flex-direction: column;
-`;
-export const SummaryLine = styled.div`
-  display: flex;
-  border-bottom: 1px solid black;
-`;
-export const SummaryTotalPriceBox = styled.div`
-  display: flex;
-`;
-export const SummaryTotalPrice = styled.div`
-  display: flex;
-`;
-

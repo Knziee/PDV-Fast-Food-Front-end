@@ -4,12 +4,12 @@ import {
   KitchenButtonBackground,
 } from "./styles";
 
-export const KitchenReadyButton: React.FC = () => {
+export const KitchenButtonRemove: React.FC = () => {
   return (
-    <ButtonsWrapper>
-      <KitchenButtonBackground>
+
+      <KitchenButtonBackground >
         <ButtonIconRemove />
       </KitchenButtonBackground>
-    </ButtonsWrapper>
+
   );
 };

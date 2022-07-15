@@ -122,4 +122,4 @@ export const categoryImages = {
   sobremesasImg: sobremesas,
 };
 
-export const kitchenItemList:any = []
+export const kitchenItemList: any = [];

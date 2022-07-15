@@ -1,3 +1,5 @@
+import { useCart } from "react-use-cart";
+import { kitchenItemList } from "../../constants/constants";
 import { KitchenListCard } from "./KitchenItemCard";
 import {
   KitchenListContainer,
@@ -7,24 +9,34 @@ import {
   Title,
 } from "./styles";
 
-interface KitchenListProps {
-  title?: string;
-  buttonChoice?: any;
-  hideNotes?: string;
-}
+export const KitchenList: React.FC = () => {
+  const {
+    isEmpty,
+    totalUniqueItems,
+    items,
+    updateItemQuantity,
+    removeItem,
+    cartTotal,
+    totalItems,
+    emptyCart,
+  } = useCart();
 
-export const KitchenList: React.FC<KitchenListProps> = ({
-  title,
-  buttonChoice,
-  hideNotes,
-}) => {
   return (
     <KitchenListContainer>
-      <Title>{title}</Title>
+      <Title></Title>
       <OnGoingList>
-        <KitchenListCard cardButtons={buttonChoice} />
-        <Notes display={hideNotes}>Observações:</Notes>
-        <NotesContainer display={hideNotes}></NotesContainer>
+        {kitchenItemList.map((kitchenItemList: any, index: any) => {
+          return (
+            <KitchenListCard
+              title={kitchenItemList.itemTitle}
+              image={kitchenItemList.itemImg}
+              key={index}
+              name={kitchenItemList.name}
+              orderNumber={kitchenItemList.orderNumber}
+            />
+          );
+        })}
+
       </OnGoingList>
     </KitchenListContainer>
   );

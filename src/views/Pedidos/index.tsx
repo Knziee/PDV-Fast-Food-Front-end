@@ -8,11 +8,12 @@ import { CategoryCard } from "../../components/CategoryList/CategoryCard";
 import { Header } from "../../components/Header";
 import { ItemList } from "../../components/ItemList";
 import { ItemCard } from "../../components/ItemList/ItemCard";
-import { Pagamento } from "../../components/Pagamento";
 import { categoryImages, itemList } from "../../constants/constants";
+import xIcon from "../../assets/images/xIcon.svg"
 import {
   ButtonWrapper,
   CategoryContainer,
+  CloseButtonWrapper,
   ItemContainer,
   PedidosWrapper,
   SearchBar,
@@ -71,8 +72,10 @@ export const Pedidos: React.FC = () => {
       left: "50%",
       right: "auto",
       bottom: "auto",
+      width: "800px",
       marginRight: "-50%",
       transform: "translate(-50%, -50%)",
+      borderRadius:"15px"
     },
   };
 
@@ -194,9 +197,10 @@ export const Pedidos: React.FC = () => {
           style={customStyles}
           contentLabel="Example Modal"
         >
-          <button onClick={closeModal}>close</button>
-          <div>I am a modal</div>
-          <Cart closeModalProp={closeModal}/>       
+          <CloseButtonWrapper>
+            <img src ={xIcon} alt="" width={20} onClick={closeModal}/>
+          </CloseButtonWrapper>
+          <Cart closeModalProp={closeModal} />
         </Modal>
       </PedidosWrapper>
     </div>

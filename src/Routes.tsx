@@ -20,7 +20,14 @@ function Routes() {
             </CartProvider>
           }
         />
-        <Route path="/cozinha" element={<Cozinha />} />
+        <Route
+          path="/cozinha"
+          element={
+            <CartProvider>
+              <Cozinha />{" "}
+            </CartProvider>
+          }
+        />
         <Route path="/retirada" element={<Retirada />} />
       </RoutesWrapper>
     </BrowserRouter>

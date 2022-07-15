@@ -1,12 +1,19 @@
 import { useRef, useState } from "react";
+import { useReactToPrint } from "react-to-print";
 import { useCart } from "react-use-cart";
 import { kitchenItemList } from "../../constants/constants";
 import { Button } from "../Button";
-import {} from "./styles";
-
-import { useReactToPrint } from "react-to-print";
+import {
+  CartSummaryContainer,
+  EmptyCartMessage,
+  EmptyCartWrapper,
+  Notes,
+  TableRow,
+  TotalItens,
+} from "./styles";
 
 import dinnerIcon from "../../assets/images/dinnerIcon.png";
+import emptyCartIcon from "../../assets/images/emptyCart.png";
 
 interface CartProps {
   closeModalProp?: any;
@@ -29,17 +36,8 @@ export const Cart: React.FC<CartProps> = ({ closeModalProp, hideButton }) => {
   const [inputChange, setInputChange]: any = useState("");
   const [inputName, setInputName]: any = useState();
   const [sucessMessage, setSucessMessage] = useState(false);
-
-  const customStyles = {
-    content: {
-      top: "50%",
-      left: "50%",
-      right: "auto",
-      bottom: "auto",
-      marginRight: "-50%",
-      transform: "translate(-50%, -50%)",
-    },
-  };
+  const [inputNote, setInputNote] = useState();
+  const [inputCode, setInputCode] = useState();
 
   const changeCalc =
     inputChange < cartTotal ? " Valor insuficiente " : inputChange - cartTotal;
@@ -49,12 +47,18 @@ export const Cart: React.FC<CartProps> = ({ closeModalProp, hideButton }) => {
     content: () => componentRef.current,
   });
 
+  // items.item.itemName = inputName
+
   function openPayment() {
     setPaymentsIsOpen(true);
     console.log("funfobotao");
   }
   function sendDataKitchen() {
-    kitchenItemList.push(...items);
+    items.map((data:any) => {
+      kitchenItemList.push({name: inputName, ...data})
+    })
+    // kitchenItemList.push(...items);
+    // kitchenItemList.push({ name: inputName, orderNumber: inputCode, note: inputNote });
     console.log(kitchenItemList);
   }
 
@@ -65,49 +69,56 @@ export const Cart: React.FC<CartProps> = ({ closeModalProp, hideButton }) => {
     setSucessMessage(true);
   }
 
-  if (isEmpty && sucessMessage === false) return <div>Adicione um item!</div>;
+  if (isEmpty && sucessMessage === false)
+    return (
+      <EmptyCartWrapper>
+        <EmptyCartMessage>Adicione um item!</EmptyCartMessage>
+        <img src={emptyCartIcon} alt="" width={300} />
+      </EmptyCartWrapper>
+    );
   else if (sucessMessage === true)
     return (
       <div>
-        {" "}
         <img src={dinnerIcon} alt="" />
         <h2>Pedido finalizado com sucesso!</h2>
         <h3>O pedido foi encaminhado para a cozinha</h3>{" "}
       </div>
     );
   return (
-    <div>
+    <CartSummaryContainer>
       <div>
         <div style={{ display: paymentsIsOpen === false ? "block" : "none" }}>
-          <div>Total de items:({totalItems})</div>
+          <TotalItens>Total de items: {totalItems}</TotalItens>
           <div>
             {items.map((item: any, index: any) => {
               return (
-                <tr key={index}>
-                  <td>
-                    <img src={item.itemImg} style={{ height: "6rem" }} />
-                  </td>
-                  <td>{item.itemTitle}</td>
-                  <td>{item.price}</td>
-                  <td>Quantidade: {item.quantity}</td>
-                  <button
-                    onClick={() =>
-                      updateItemQuantity(item.id, item.quantity - 1)
-                    }
-                  >
-                    -
-                  </button>
-                  <button
-                    onClick={() =>
-                      updateItemQuantity(item.id, item.quantity + 1)
-                    }
-                  >
-                    +
-                  </button>{" "}
-                  <button onClick={() => removeItem(item.id)}>
-                    Remover Item
-                  </button>
-                </tr>
+                <div>
+                  <TableRow key={index}>
+                    <td>
+                      <img src={item.itemImg} style={{ height: "6rem" }} />
+                    </td><TableRow>
+                    <td>{item.itemTitle}</td> <td>{item.price}</td>
+                    </TableRow>
+                    <td>Quantidade: {item.quantity}</td>
+                    <button
+                      onClick={() =>
+                        updateItemQuantity(item.id, item.quantity - 1)
+                      }
+                    >
+                      -
+                    </button>
+                    <button
+                      onClick={() =>
+                        updateItemQuantity(item.id, item.quantity + 1)
+                      }
+                    >
+                      +
+                    </button>{" "}
+                    <button onClick={() => removeItem(item.id)}>
+                      Remover Item
+                    </button>{" "}
+                  </TableRow>{" "}
+                </div>
               );
             })}
           </div>
@@ -152,6 +163,8 @@ export const Cart: React.FC<CartProps> = ({ closeModalProp, hideButton }) => {
                   placeholder="Insira seu nome"
                   onChange={(e) => setInputName(e.target.value)}
                 ></input>
+                <label>Codigo do pedido:</label>
+                <input value={inputCode} />
               </div>
               <div>Selecione as formas de pagamento:</div>{" "}
               <select>
@@ -168,6 +181,8 @@ export const Cart: React.FC<CartProps> = ({ closeModalProp, hideButton }) => {
               ></input>
               <label>Troco:</label>
               <div>{changeCalc}</div>
+              <Notes>Observações:</Notes>
+              <input></input>
               <div
                 onClick={() => {
                   handleFinishOrder();
@@ -202,6 +217,6 @@ export const Cart: React.FC<CartProps> = ({ closeModalProp, hideButton }) => {
           color="#fff"
         />
       </div>
-    </div>
+    </CartSummaryContainer>
   );
 };
