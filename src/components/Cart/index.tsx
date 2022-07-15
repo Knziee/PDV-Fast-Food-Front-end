@@ -3,17 +3,31 @@ import { useReactToPrint } from "react-to-print";
 import { useCart } from "react-use-cart";
 import { kitchenItemList, noteList } from "../../constants/constants";
 import { Button } from "../Button";
+import { KitchenButtonRemove } from "../KitchenList/KitchenItemCard/KitchenButtonRemove";
 import {
+  ButtonWrapper,
   CartSummaryContainer,
+  CleanCart,
   EmptyCartMessage,
   EmptyCartWrapper,
+  InnerTableRow,
+  ItemQuantity,
   Notes,
-  TableRow,
+  QuantityIcon,
+  TableColumn,
+  TableColumnInfo,
+  TableRowQuantity,
+  TableRowTitle,
+  TableWraper,
   TotalItens,
+  TotalValue,
+  TotalValueNumbers,
 } from "./styles";
 
 import dinnerIcon from "../../assets/images/dinnerIcon.png";
 import emptyCartIcon from "../../assets/images/emptyCart.png";
+import plusIcon from "../../assets/images/testeicon1.svg";
+import minusIcon from "../../assets/images/testeicon4.svg";
 
 interface CartProps {
   closeModalProp?: any;
@@ -96,64 +110,73 @@ export const Cart: React.FC<CartProps> = ({ closeModalProp, hideButton }) => {
       <div>
         <div style={{ display: paymentsIsOpen === false ? "block" : "none" }}>
           <TotalItens>Total de items: {totalItems}</TotalItens>
-          <div>
+          <div style={{ marginBottom: "50px" }}>
             {items.map((item: any, index: any) => {
               return (
-                <div>
-                  <TableRow key={index}>
-                    <td>
-                      <img
-                        src={item.itemImg}
-                        alt=""
-                        style={{ height: "6rem" }}
-                      />
-                    </td>
-                    <TableRow>
-                      <td>{item.itemTitle}</td> <td>{item.price}</td>
-                    </TableRow>
-                    <td>Quantidade: {item.quantity}</td>
-                    <button
-                      onClick={() =>
-                        updateItemQuantity(item.id, item.quantity - 1)
-                      }
-                    >
-                      -
-                    </button>
-                    <button
-                      onClick={() =>
-                        updateItemQuantity(item.id, item.quantity + 1)
-                      }
-                    >
-                      +
-                    </button>{" "}
-                    <button onClick={() => removeItem(item.id)}>
-                      Remover Item
-                    </button>{" "}
-                  </TableRow>{" "}
-                </div>
+                <TableWraper key={index}>
+                  <TableColumn>
+                    <img src={item.itemImg} alt="" style={{ height: "6rem" }} />
+                  </TableColumn>
+                  <TableColumnInfo>
+                    <TableRowTitle>
+                      <InnerTableRow>{item.itemTitle}</InnerTableRow>
+                      <InnerTableRow>{item.price}</InnerTableRow>
+                    </TableRowTitle>
+                    <TableRowQuantity>
+                      <InnerTableRow>
+                        <QuantityIcon>
+                          <img
+                            src={plusIcon}
+                            alt=""
+                            width={30}
+                            onClick={() =>
+                              updateItemQuantity(item.id, item.quantity + 1)
+                            }
+                          />
+                        </QuantityIcon>
+                        <ItemQuantity>{item.quantity}</ItemQuantity>
+                        <QuantityIcon>
+                          <img
+                            src={minusIcon}
+                            alt=""
+                            width={30}
+                            onClick={() =>
+                              updateItemQuantity(item.id, item.quantity - 1)
+                            }
+                          />
+                        </QuantityIcon>
+                      </InnerTableRow>
+                      <InnerTableRow>
+                        <div onClick={() => removeItem(item.id)}>
+                          <KitchenButtonRemove />
+                        </div>
+                      </InnerTableRow>
+                    </TableRowQuantity>
+                  </TableColumnInfo>
+                </TableWraper>
               );
             })}
+            <CleanCart onClick={() => emptyCart()}>Limpar carrinho</CleanCart>
           </div>
 
-          <h2>Total price: {cartTotal}</h2>
-          <button onClick={() => emptyCart()}>Limpar carrinho</button>
-          <div>
-            <div
-              onClick={() => {
-                openPayment();
-                handleIncrement()
-              }}
-            >
-              <Button
-                background="#fff"
-                borderColor="#9f9f9f"
-                text="Finalizar pedido"
-                width="350px"
-                height="50px"
-                color="#9f9f9f"
-              />
-            </div>
-          </div>
+          <TotalValue>Valor total:</TotalValue>
+          <TotalValueNumbers> R$ {cartTotal.toFixed(2)}</TotalValueNumbers>
+
+          <ButtonWrapper
+            onClick={() => {
+              openPayment();
+              handleIncrement();
+            }}
+          >
+            <Button
+              background="#145C15"
+              borderColor="#145C15"
+              text="Concluir pedido"
+              width="350px"
+              height="50px"
+              color="#ffff"
+            />
+          </ButtonWrapper>
         </div>
         <div ref={componentRef}>
           <div style={{ display: paymentsIsOpen === false ? "none" : "block" }}>
@@ -203,7 +226,7 @@ export const Cart: React.FC<CartProps> = ({ closeModalProp, hideButton }) => {
               <div
                 onClick={() => {
                   handleFinishOrder();
-                  hideButton()
+                  hideButton();
                   //   closeModalProp();
                 }}
               >
@@ -226,12 +249,12 @@ export const Cart: React.FC<CartProps> = ({ closeModalProp, hideButton }) => {
         }}
       >
         <Button
-          background="#9f9f9f"
-          borderColor="#9f9f9f"
+          background="none"
+          borderColor="#145C15"
           text="Continuar adicionando"
           width="350px"
-          height="60px"
-          color="#fff"
+          height="50px"
+          color="#145C15"
         />
       </div>
     </CartSummaryContainer>

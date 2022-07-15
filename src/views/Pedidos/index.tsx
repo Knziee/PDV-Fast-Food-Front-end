@@ -25,7 +25,7 @@ export const Pedidos: React.FC = () => {
   const [category, setCategory] = useState("");
   const [useCategory, setUseCategory] = useState(false);
   const [modalIsOpen, setIsOpen] = useState(false);
-  const [isSelected, SetIsSelected] = useState("nop");
+
 
   const filterBurguers = () => {
     setCategory("burguer");
@@ -88,6 +88,12 @@ export const Pedidos: React.FC = () => {
     setIsOpen(false);
   }
 
+    const selectWithState = (event: any, index: any) => {
+    console.log(event.target);
+    console.log("key index: ", index);
+
+  };
+
   const { addItem } = useCart();
 
   return (
@@ -132,14 +138,14 @@ export const Pedidos: React.FC = () => {
                 })
                 .map((itemList, index) => {
                   return (
-                    <div onClick={() => addItem(itemList)}>
+                    <div onClick={(event) => {addItem(itemList);selectWithState(event, index);}}>
                       <ItemCard
                         title={itemList.itemTitle}
                         imgSrc={itemList.itemImg}
                         key={index}
                         description={itemList.description}
                         price={"R$" + itemList.price}
-                        selected={isSelected}
+
                       />
                     </div>
                   );
@@ -158,14 +164,14 @@ export const Pedidos: React.FC = () => {
                 })
                 .map((itemList, index) => {
                   return (
-                    <div onClick={() => addItem(itemList)}>
+                    <div onClick={(event) => {addItem(itemList);selectWithState(event, index);}}>
                       <ItemCard
                         title={itemList.itemTitle}
                         imgSrc={itemList.itemImg}
                         key={index}
                         description={itemList.description}
                         price={"R$" + itemList.price}
-                        selected={isSelected}
+
                       />
                     </div>
                   );

@@ -22,23 +22,30 @@ export const ItemCard: React.FC<ItemProps> = ({
   price,
   selected,
 }) => {
+  // const [isSelected, SetIsSelected] = useState("nop");
+  // function selectItem() {
+  //   SetIsSelected("yes");
+  // }
+
   return (
-    <ItemImgBackground red>
-      <ItemSelected visible={selected} />
-      <ItemBackground>
-        <img
-          src={imgSrc}
-          alt=""
-          style={{
-            maxHeight: "180px",
-            maxWidth: "220px",
-            marginTop: "-140px",
-          }}
-        />
-        <ItemTitle>{title}</ItemTitle>
-        <ItemDescription>{description}</ItemDescription>
-        <ItemPrice>{price}</ItemPrice>
-      </ItemBackground>
-    </ItemImgBackground>
+    <div>
+      <ItemImgBackground red>
+        <ItemSelected visible="nop" />
+        <ItemBackground>
+          <img
+            src={imgSrc}
+            alt=""
+            style={{
+              maxHeight: "180px",
+              maxWidth: "220px",
+              marginTop: "-140px",
+            }}
+          />
+          <ItemTitle>{title}</ItemTitle>
+          <ItemDescription>{description}</ItemDescription>
+          <ItemPrice>{price}</ItemPrice>
+        </ItemBackground>
+      </ItemImgBackground>
+    </div>
   );
 };
