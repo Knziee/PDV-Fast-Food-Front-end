@@ -4,8 +4,7 @@ import { Header } from "../../components/Header";
 import { KitchenListCard } from "../../components/KitchenList/KitchenItemCard";
 import { KitchenButtonConfirm } from "../../components/KitchenList/KitchenItemCard/KitchenButtonConfirm";
 import { KitchenButtonRemove } from "../../components/KitchenList/KitchenItemCard/KitchenButtonRemove";
-import { kitchenItemList } from "../../constants/constants";
-import { noteList } from "../../constants/constants";
+import { kitchenItemList, noteList } from "../../constants/constants";
 import {
   CozinhaDivider,
   CozinhaWrapper,
@@ -86,7 +85,11 @@ export const Cozinha: React.FC = () => {
             })}
             <Notes>Observações:</Notes>
             {noteList.map((noteList: any, index: number) => {
-              return <NotesContainer>{noteList.note}</NotesContainer>;
+              return (
+                <NotesContainer>
+                  {remove.name} - {noteList.note}
+                </NotesContainer>
+              );
             })}
           </OnGoingList>
         </KitchenListContainer>

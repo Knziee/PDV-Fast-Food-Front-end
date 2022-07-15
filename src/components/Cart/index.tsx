@@ -1,8 +1,7 @@
 import { useRef, useState } from "react";
 import { useReactToPrint } from "react-to-print";
 import { useCart } from "react-use-cart";
-import { kitchenItemList } from "../../constants/constants";
-import { noteList } from "../../constants/constants";
+import { kitchenItemList, noteList } from "../../constants/constants";
 import { Button } from "../Button";
 import {
   CartSummaryContainer,
@@ -38,7 +37,7 @@ export const Cart: React.FC<CartProps> = ({ closeModalProp, hideButton }) => {
   const [inputName, setInputName]: any = useState();
   const [sucessMessage, setSucessMessage] = useState(false);
   const [inputNote, setInputNote]: any = useState();
-  const [inputCode, setInputCode]: any = useState();
+  const [inputCode, setInputCode]: any = useState(201);
 
   const changeCalc =
     inputChange < cartTotal ? " Valor insuficiente " : inputChange - cartTotal;
@@ -47,8 +46,9 @@ export const Cart: React.FC<CartProps> = ({ closeModalProp, hideButton }) => {
   const handlePrint = useReactToPrint({
     content: () => componentRef.current,
   });
-
-  // items.item.itemName = inputName
+  const handleIncrement = () => {
+    setInputCode(inputCode + 1);
+  };
 
   function openPayment() {
     setPaymentsIsOpen(true);
@@ -59,11 +59,11 @@ export const Cart: React.FC<CartProps> = ({ closeModalProp, hideButton }) => {
       kitchenItemList.push({
         name: inputName,
         orderNumber: inputCode,
-        
+
         ...data,
       });
     });
-    noteList.push({note: inputNote})
+    noteList.push({ note: inputNote });
     // kitchenItemList.push(...items);
     // kitchenItemList.push({ name: inputName, orderNumber: inputCode, note: inputNote });
     console.log(kitchenItemList);
@@ -102,7 +102,11 @@ export const Cart: React.FC<CartProps> = ({ closeModalProp, hideButton }) => {
                 <div>
                   <TableRow key={index}>
                     <td>
-                      <img src={item.itemImg} style={{ height: "6rem" }} />
+                      <img
+                        src={item.itemImg}
+                        alt=""
+                        style={{ height: "6rem" }}
+                      />
                     </td>
                     <TableRow>
                       <td>{item.itemTitle}</td> <td>{item.price}</td>
@@ -134,7 +138,12 @@ export const Cart: React.FC<CartProps> = ({ closeModalProp, hideButton }) => {
           <h2>Total price: {cartTotal}</h2>
           <button onClick={() => emptyCart()}>Limpar carrinho</button>
           <div>
-            <div onClick={() => openPayment()}>
+            <div
+              onClick={() => {
+                openPayment();
+                handleIncrement()
+              }}
+            >
               <Button
                 background="#fff"
                 borderColor="#9f9f9f"
@@ -172,7 +181,7 @@ export const Cart: React.FC<CartProps> = ({ closeModalProp, hideButton }) => {
                   onChange={(e) => setInputName(e.target.value)}
                 ></input>
                 <label>Codigo do pedido:</label>
-                <input onChange={(e) => setInputCode(e.target.value)} />
+                <div>{inputCode}</div>
               </div>
               <div>Selecione as formas de pagamento:</div>{" "}
               <select>
@@ -194,7 +203,7 @@ export const Cart: React.FC<CartProps> = ({ closeModalProp, hideButton }) => {
               <div
                 onClick={() => {
                   handleFinishOrder();
-                  hideButton();
+                  hideButton()
                   //   closeModalProp();
                 }}
               >
