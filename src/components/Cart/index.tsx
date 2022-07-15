@@ -2,6 +2,7 @@ import { useRef, useState } from "react";
 import { useReactToPrint } from "react-to-print";
 import { useCart } from "react-use-cart";
 import { kitchenItemList } from "../../constants/constants";
+import { noteList } from "../../constants/constants";
 import { Button } from "../Button";
 import {
   CartSummaryContainer,
@@ -36,8 +37,8 @@ export const Cart: React.FC<CartProps> = ({ closeModalProp, hideButton }) => {
   const [inputChange, setInputChange]: any = useState("");
   const [inputName, setInputName]: any = useState();
   const [sucessMessage, setSucessMessage] = useState(false);
-  const [inputNote, setInputNote] = useState();
-  const [inputCode, setInputCode] = useState();
+  const [inputNote, setInputNote]: any = useState();
+  const [inputCode, setInputCode]: any = useState();
 
   const changeCalc =
     inputChange < cartTotal ? " Valor insuficiente " : inputChange - cartTotal;
@@ -54,9 +55,15 @@ export const Cart: React.FC<CartProps> = ({ closeModalProp, hideButton }) => {
     console.log("funfobotao");
   }
   function sendDataKitchen() {
-    items.map((data:any) => {
-      kitchenItemList.push({name: inputName, ...data})
-    })
+    items.map((data: any) => {
+      kitchenItemList.push({
+        name: inputName,
+        orderNumber: inputCode,
+        
+        ...data,
+      });
+    });
+    noteList.push({note: inputNote})
     // kitchenItemList.push(...items);
     // kitchenItemList.push({ name: inputName, orderNumber: inputCode, note: inputNote });
     console.log(kitchenItemList);
@@ -96,8 +103,9 @@ export const Cart: React.FC<CartProps> = ({ closeModalProp, hideButton }) => {
                   <TableRow key={index}>
                     <td>
                       <img src={item.itemImg} style={{ height: "6rem" }} />
-                    </td><TableRow>
-                    <td>{item.itemTitle}</td> <td>{item.price}</td>
+                    </td>
+                    <TableRow>
+                      <td>{item.itemTitle}</td> <td>{item.price}</td>
                     </TableRow>
                     <td>Quantidade: {item.quantity}</td>
                     <button
@@ -164,7 +172,7 @@ export const Cart: React.FC<CartProps> = ({ closeModalProp, hideButton }) => {
                   onChange={(e) => setInputName(e.target.value)}
                 ></input>
                 <label>Codigo do pedido:</label>
-                <input value={inputCode} />
+                <input onChange={(e) => setInputCode(e.target.value)} />
               </div>
               <div>Selecione as formas de pagamento:</div>{" "}
               <select>
@@ -182,7 +190,7 @@ export const Cart: React.FC<CartProps> = ({ closeModalProp, hideButton }) => {
               <label>Troco:</label>
               <div>{changeCalc}</div>
               <Notes>Observações:</Notes>
-              <input></input>
+              <input onChange={(e) => setInputNote(e.target.value)} />
               <div
                 onClick={() => {
                   handleFinishOrder();

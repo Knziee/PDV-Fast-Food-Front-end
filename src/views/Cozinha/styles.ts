@@ -17,7 +17,6 @@ export const CozinhaDivider = styled.div`
   background-color: black;
 `;
 
-
 export const KitchenListContainer = styled.div`
   height: 100%;
   max-width: 1440px;
@@ -51,6 +50,7 @@ export const NotesContainer = styled.div`
   max-width: 400px;
   border: 1px solid black;
   border-radius: 5px;
+  font-size: 25px;
   margin-bottom: 80px;
   display: ${(props: any) => props.display};
   font-family: "RobotoRegular";

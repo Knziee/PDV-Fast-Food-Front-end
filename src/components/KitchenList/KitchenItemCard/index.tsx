@@ -19,7 +19,7 @@ export const KitchenListCard: React.FC<KitchenCardProps> = ({
     <CardContainer>
       <img src={image} alt="" width={100} />
       <Title>
-        201 - {name} <Description>{title}</Description>
+        {orderNumber} - {name} <Description>{title}</Description>
       </Title>
       {cardButtons}
     </CardContainer>

@@ -16,6 +16,8 @@ import bebidas from "../assets/images/bebidas.png";
 import burguer from "../assets/images/burguer.png";
 import sobremesas from "../assets/images/sobremesas.png";
 
+
+
 export const itemList = [
   {
     id: 1,
@@ -123,3 +125,5 @@ export const categoryImages = {
 };
 
 export const kitchenItemList: any = [];
+
+export const noteList: any = [];

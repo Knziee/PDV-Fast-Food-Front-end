@@ -5,6 +5,7 @@ import { KitchenListCard } from "../../components/KitchenList/KitchenItemCard";
 import { KitchenButtonConfirm } from "../../components/KitchenList/KitchenItemCard/KitchenButtonConfirm";
 import { KitchenButtonRemove } from "../../components/KitchenList/KitchenItemCard/KitchenButtonRemove";
 import { kitchenItemList } from "../../constants/constants";
+import { noteList } from "../../constants/constants";
 import {
   CozinhaDivider,
   CozinhaWrapper,
@@ -47,7 +48,6 @@ export const Cozinha: React.FC = () => {
   //   // key={index}
 
   // };
-const nomezinho = "nomezada"
 
   return (
     <div>
@@ -58,7 +58,7 @@ const nomezinho = "nomezada"
           <OnGoingList>
             {remove.map((remove: any, index: number) => {
               return (
-                <div style={{ display: show }}>
+                <div>
                   <KitchenListCard
                     title={remove.itemTitle}
                     image={remove.itemImg}
@@ -85,7 +85,9 @@ const nomezinho = "nomezada"
               );
             })}
             <Notes>Observações:</Notes>
-            <NotesContainer></NotesContainer>
+            {noteList.map((noteList: any, index: number) => {
+              return <NotesContainer>{noteList.note}</NotesContainer>;
+            })}
           </OnGoingList>
         </KitchenListContainer>
 
