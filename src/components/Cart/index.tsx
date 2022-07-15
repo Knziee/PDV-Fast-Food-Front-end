@@ -37,7 +37,7 @@ export const Cart: React.FC<CartProps> = ({ closeModalProp, hideButton }) => {
   const [inputName, setInputName]: any = useState();
   const [sucessMessage, setSucessMessage] = useState(false);
   const [inputNote, setInputNote]: any = useState();
-  const [inputCode, setInputCode]: any = useState(201);
+  const [inputOrderNumber, setInputOrderNumber]: any = useState(201);
 
   const changeCalc =
     inputChange < cartTotal ? " Valor insuficiente " : inputChange - cartTotal;
@@ -47,7 +47,7 @@ export const Cart: React.FC<CartProps> = ({ closeModalProp, hideButton }) => {
     content: () => componentRef.current,
   });
   const handleIncrement = () => {
-    setInputCode(inputCode + 1);
+    setInputOrderNumber(inputOrderNumber + 1);
   };
 
   function openPayment() {
@@ -58,7 +58,7 @@ export const Cart: React.FC<CartProps> = ({ closeModalProp, hideButton }) => {
     items.map((data: any) => {
       kitchenItemList.push({
         name: inputName,
-        orderNumber: inputCode,
+        orderNumber: inputOrderNumber,
 
         ...data,
       });
@@ -181,7 +181,7 @@ export const Cart: React.FC<CartProps> = ({ closeModalProp, hideButton }) => {
                   onChange={(e) => setInputName(e.target.value)}
                 ></input>
                 <label>Codigo do pedido:</label>
-                <div>{inputCode}</div>
+                <div>{inputOrderNumber}</div>
               </div>
               <div>Selecione as formas de pagamento:</div>{" "}
               <select>
