@@ -55,3 +55,15 @@ export const NotesContainer = styled.div`
   display: ${(props: any) => props.display};
   font-family: "RobotoRegular";
 `;
+export const KitchenButtonWrapper = styled.div`
+  display: flex;
+  align-items: row;
+  margin-left: 50px;
+  margin-top: 20px;
+  gap: 10px;
+`;
+export const KitchenItemContainer = styled.div`
+  display: flex;
+  align-items: row;
+  justify-content: space-between;
+`;

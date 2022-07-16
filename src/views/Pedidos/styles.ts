@@ -64,4 +64,5 @@ export const CloseButtonWrapper = styled.div`
     contrast(88%);
   margin-top: 20px;
   margin-right: 20px;
+  cursor: pointer;
 `;

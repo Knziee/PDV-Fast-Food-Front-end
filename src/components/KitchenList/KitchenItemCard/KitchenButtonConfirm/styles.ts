@@ -26,9 +26,3 @@ export const ButtonIconRemove = styled.div`
   background-image: url(${xIcon});
 `;
 
-export const ButtonsWrapper = styled.div`
-  display: flex;
-  align-items: center;
-  margin-left: 60px;
-  gap: 10px;
-`;

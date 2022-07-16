@@ -1,15 +1,9 @@
-import {
-  ButtonIconRemove,
-  ButtonsWrapper,
-  KitchenButtonBackground,
-} from "./styles";
+import { ButtonIconRemove, KitchenButtonBackground } from "./styles";
 
 export const KitchenButtonRemove: React.FC = () => {
   return (
-
-      <KitchenButtonBackground >
-        <ButtonIconRemove />
-      </KitchenButtonBackground>
-
+    <KitchenButtonBackground>
+      <ButtonIconRemove />
+    </KitchenButtonBackground>
   );
 };

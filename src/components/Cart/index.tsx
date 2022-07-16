@@ -12,8 +12,25 @@ import {
   EmptyCartWrapper,
   InnerTableRow,
   ItemQuantity,
+  NoteInput,
   Notes,
+  OrderChange,
+  OrderItemPrice,
+  OrderItemTitle,
+  OrderItemWrapper,
+  OrderSumary,
+  OrderSumaryContent,
+  OrderSumaryLine,
+  PaymentFakeInput,
+  PaymentInfoContainer,
+  PaymentInfoMinorContainer,
+  PaymentInput,
+  PaymentSelect,
+  PaymentSubTitle,
+  PaymentTitle,
   QuantityIcon,
+  SucessMessage,
+  SucessMessageContainer,
   TableColumn,
   TableColumnInfo,
   TableRowQuantity,
@@ -53,8 +70,9 @@ export const Cart: React.FC<CartProps> = ({ closeModalProp, hideButton }) => {
   const [inputNote, setInputNote]: any = useState();
   const [inputOrderNumber, setInputOrderNumber]: any = useState(201);
 
+  const calcWithInput = inputChange - cartTotal;
   const changeCalc =
-    inputChange < cartTotal ? " Valor insuficiente " : inputChange - cartTotal;
+    inputChange < cartTotal ? " Valor insuficiente " : calcWithInput.toFixed(2);
 
   const componentRef: any = useRef();
   const handlePrint = useReactToPrint({
@@ -99,11 +117,10 @@ export const Cart: React.FC<CartProps> = ({ closeModalProp, hideButton }) => {
     );
   else if (sucessMessage === true)
     return (
-      <div>
+      <SucessMessageContainer>
         <img src={dinnerIcon} alt="" />
-        <h2>Pedido finalizado com sucesso!</h2>
-        <h3>O pedido foi encaminhado para a cozinha</h3>{" "}
-      </div>
+        <SucessMessage>Pedido finalizado com sucesso!</SucessMessage>
+      </SucessMessageContainer>
     );
   return (
     <CartSummaryContainer>
@@ -180,65 +197,92 @@ export const Cart: React.FC<CartProps> = ({ closeModalProp, hideButton }) => {
         </div>
         <div ref={componentRef}>
           <div style={{ display: paymentsIsOpen === false ? "none" : "block" }}>
-            <h1>Pagamento</h1>
-            <div>Resumo da compra</div>
-            <br />
-            {items.map((item: any, index: any) => {
-              return (
-                <div>
-                  <tr>
-                    <td>{item.quantity}</td>
-                    <td>{item.itemTitle}</td>
-                    <td>{item.price}</td>
-                  </tr>
-                </div>
-              );
-            })}
-            <br />
-            <div>
-              <div>Valor total da compra: {cartTotal}</div>
-              <div>
-                <label>Nome do cliente</label>
-                <input
+            <PaymentTitle>Pagamento</PaymentTitle>
+            <PaymentSubTitle marginBottom="10px">
+              Resumo da compra
+            </PaymentSubTitle>
+            <OrderSumary>
+              <OrderSumaryContent>
+                {items.map((item: any, index: any) => {
+                  return (
+                    <OrderItemWrapper>
+                      <OrderItemTitle>
+                        <td>{item.quantity}x </td>
+                        <td> {item.itemTitle}</td>
+                      </OrderItemTitle>
+                      <OrderItemPrice>
+                        <td>R$ {item.price}</td>
+                      </OrderItemPrice>
+                    </OrderItemWrapper>
+                  );
+                })}
+
+                <OrderSumaryLine />
+                <TotalValue>
+                  Valor total da compra:{" "}
+                  <TotalValueNumbers>R$ {cartTotal}</TotalValueNumbers>
+                </TotalValue>
+              </OrderSumaryContent>
+            </OrderSumary>
+
+            <PaymentInfoContainer>
+              <PaymentInfoMinorContainer>
+                <PaymentSubTitle marginBottom="2px">
+                  Nome do cliente
+                </PaymentSubTitle>
+                <PaymentInput
                   placeholder="Insira seu nome"
-                  onChange={(e) => setInputName(e.target.value)}
-                ></input>
-                <label>Codigo do pedido:</label>
-                <div>{inputOrderNumber}</div>
-              </div>
-              <div>Selecione as formas de pagamento:</div>{" "}
-              <select>
-                <option>Debito</option> <option>Credito</option>{" "}
-                <option>Dinheiro</option>
-              </select>
-            </div>
+                  onChange={(e: any) => setInputName(e.target.value)}
+                ></PaymentInput>
+                <PaymentSubTitle>Codigo:</PaymentSubTitle>
+                <PaymentFakeInput width="30px">
+                  {inputOrderNumber}
+                </PaymentFakeInput>
+              </PaymentInfoMinorContainer>
+              <PaymentInfoMinorContainer>
+                <PaymentSubTitle>
+                  Selecione as formas de pagamento:
+                </PaymentSubTitle>{" "}
+                <PaymentSelect>
+                  <option value="1">Dinheiro</option>{" "}
+                  <option value="2">Credito</option>{" "}
+                  <option value="3">Debito</option>
+                </PaymentSelect>
+              </PaymentInfoMinorContainer>
+            </PaymentInfoContainer>
             <div>
-              <label>Valor entregue:</label>
-              <input
-                placeholder="insira o valor"
-                value={inputChange}
-                onChange={(e) => setInputChange(e.target.value)}
-              ></input>
-              <label>Troco:</label>
-              <div>{changeCalc}</div>
-              <Notes>Observações:</Notes>
-              <input onChange={(e) => setInputNote(e.target.value)} />
               <div
+              // style={{
+              //   display:
+              //     PaymentSelect.option.value === "3" ? "block" : "none",
+              // }}
+              >
+                <PaymentSubTitle>Valor entregue:</PaymentSubTitle>
+                <PaymentInput
+                  placeholder="insira o valor"
+                  value={inputChange}
+                  onChange={(e: any) => setInputChange(e.target.value)}
+                ></PaymentInput>
+                <PaymentSubTitle>Troco:</PaymentSubTitle>
+                <OrderChange>R$ {changeCalc}</OrderChange>
+              </div>
+              <Notes>Observações:</Notes>
+              <NoteInput onChange={(e: any) => setInputNote(e.target.value)} />
+              <ButtonWrapper
                 onClick={() => {
                   handleFinishOrder();
                   hideButton();
-                  //   closeModalProp();
                 }}
               >
                 <Button
-                  background="#fff"
-                  borderColor="#9f9f9f"
-                  text="Concluir pedido"
+                  background="#145C15"
+                  borderColor="#145C15"
+                  text="Finalizar pedido"
                   width="350px"
                   height="50px"
-                  color="#9f9f9f"
+                  color="#ffff"
                 />
-              </div>
+              </ButtonWrapper>
             </div>
           </div>
         </div>

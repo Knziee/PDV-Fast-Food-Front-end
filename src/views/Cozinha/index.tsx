@@ -8,6 +8,8 @@ import { kitchenItemList, noteList } from "../../constants/constants";
 import {
   CozinhaDivider,
   CozinhaWrapper,
+  KitchenButtonWrapper,
+  KitchenItemContainer,
   KitchenListContainer,
   Notes,
   NotesContainer,
@@ -57,7 +59,7 @@ export const Cozinha: React.FC = () => {
           <OnGoingList>
             {remove.map((remove: any, index: number) => {
               return (
-                <div>
+                <KitchenItemContainer>
                   <KitchenListCard
                     title={remove.itemTitle}
                     image={remove.itemImg}
@@ -65,8 +67,13 @@ export const Cozinha: React.FC = () => {
                     name={remove.name}
                     orderNumber={remove.orderNumber}
                     cardButtons={
-                      <div>
-                        <div onClick={() => addItem(remove)}>
+                      <KitchenButtonWrapper>
+                        <div
+                          onClick={(evt) => {
+                            addItem(remove);
+                            handleRemoveItem(evt, remove.itemTitle);
+                          }}
+                        >
                           <KitchenButtonConfirm />
                         </div>
                         <div
@@ -77,10 +84,10 @@ export const Cozinha: React.FC = () => {
                         >
                           <KitchenButtonRemove />
                         </div>
-                      </div>
+                      </KitchenButtonWrapper>
                     }
                   />
-                </div>
+                </KitchenItemContainer>
               );
             })}
             <Notes>Observações:</Notes>
@@ -105,12 +112,12 @@ export const Cozinha: React.FC = () => {
                   title={item.itemTitle}
                   image={item.itemImg}
                   key={index}
-                  name={remove.name}
+                  name={item.name}
                   orderNumber={item.orderNumber}
                   cardButtons={
-                    <div onClick={() => removeItem(item.id)}>
+                    <KitchenButtonWrapper onClick={() => removeItem(item.id)}>
                       <KitchenButtonRemove />
-                    </div>
+                    </KitchenButtonWrapper>
                   }
                 />
               );

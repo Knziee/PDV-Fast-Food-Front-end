@@ -1,6 +1,5 @@
 import {
   ButtonIconConfirm,
-  ButtonsWrapper,
   KitchenButtonBackground,
 } from "./styles";
 

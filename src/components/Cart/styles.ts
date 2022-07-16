@@ -19,6 +19,20 @@ export const EmptyCartWrapper = styled.div`
   flex-direction: column;
   margin-bottom: 100px;
 `;
+export const SucessMessageContainer = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+`;
+export const SucessMessage = styled.div`
+  font-size: 30px;
+  font-family: "RobotoBlack";
+  text-align: center;
+  margin-top: 20px;
+  margin-bottom: 30px;
+`;
+
 export const CartSummaryContainer = styled.div`
   display: flex;
   align-items: center;
@@ -114,4 +128,85 @@ export const ButtonWrapper = styled.div`
   margin-bottom: 10px;
   display: flex;
   justify-content: center;
+`;
+export const PaymentTitle = styled.div`
+  font-size: 35px;
+  font-family: "RobotoBlack";
+  margin-bottom: 40px;
+`;
+export const PaymentSubTitle = styled.div`
+  font-size: 15px;
+  font-family: "RobotoBlack";
+  margin-bottom: ${(props: any) => props.marginBottom};
+`;
+export const PaymentInput = styled.input`
+  font-size: 15px;
+  font-family: "RobotoMedium";
+  height: 30px;
+  border-radius: 5px;
+  background-color: #f4f4f4;
+  width: ${(props: any) => props.width};
+  margin-bottom: 10px;
+`;
+export const PaymentFakeInput = styled.div`
+  font-size: 15px;
+  font-family: "RobotoMedium";
+  background-color: #f4f4f4;
+  width: ${(props: any) => props.width};
+  margin-bottom: 10px;
+`;
+export const PaymentInfoContainer = styled.div`
+  display: flex;
+  flex-direction: row;
+`;
+export const PaymentInfoMinorContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+`;
+
+export const PaymentSelect = styled.select`
+  font-size: 15px;
+  font-family: "RobotoMedium";
+  margin-bottom: 20px;
+`;
+
+export const OrderSumary = styled.div`
+  border: 1px solid lightgray;
+  border-radius: 5px;
+  margin-bottom: 30px;
+`;
+export const OrderSumaryContent = styled.div`
+  margin: 20px 20px 20px 20px;
+`;
+export const OrderSumaryLine = styled.div`
+  border-bottom: 2px dotted lightgray;
+  margin: 15px;
+`;
+export const OrderItemTitle = styled.div`
+  font-size: 15px;
+  font-family: "RobotoRegular";
+`;
+export const OrderItemWrapper = styled.div`
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 400px;
+`;
+export const OrderItemPrice = styled.div`
+  font-size: 15px;
+  font-family: "RobotoRegular";
+`;
+export const OrderChange = styled.div`
+  font-size: 25px;
+  font-family: "RobotBlack";
+`;
+export const NoteInput = styled.input`
+  font-size: 15px;
+  font-family: "RobotoRegular";
+  border: 1px solid black;
+  border-radius: 5px;
+  height: 100px;
+  width: 250px;
+  text-align: start;
+  align-items: flex-start;
 `;
